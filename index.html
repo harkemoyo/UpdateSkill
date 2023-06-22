@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Game</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="game-container">
+
+        <div class="header">
+            <h1>Math Project</h1>
+        </div>
+        <!-- splash page form -->
+        <div class="card" id="splash-page" hidden>
+            <form action="" id="start-form">
+                <!-- radio page -->
+                <div class="selection-container">
+                    <!-- 10 quiz -->
+                    <div class="radio-container">
+                        <label for="value-10">10 Questions</label>
+                        <input type="radio" id="value-10" name="questions" value="10">
+                        <span class="best-score">
+                            <span>Best Score</span>
+                            <span class="best-score-value">0.0s</span>
+                        </span>
+
+                    </div>
+                    <!-- 25 quiz -->
+                    <div class="radio-container">
+                        <label for="value-25">25 Questions</label>
+                        <input type="radio" id="value-25" name="questions" value="25">
+                        <span class="best-score">
+                            <span>Best Score</span>
+                            <span class="best-score-value">0.0s</span>
+                        </span>
+
+                    </div>
+                    <!-- 50 quiz -->
+                    <div class="radio-container">
+                        <label for="value-50">50 Questions</label>
+                        <input type="radio" id="value-50" name="questions" value="50">
+                        <span class="best-score">
+                            <span>Best Score</span>
+                            <span class="best-score-value">0.0s</span>
+                        </span>
+
+                    </div>
+                    <!-- 99 quiz -->
+                    <div class="radio-container">
+                        <label for="value-99">99 Questions</label>
+                        <input type="radio" id="value-99" name="questions" value="99">
+                        <span class="best-score">
+                            <span>Best Score</span>
+                            <span class="best-score-value">0.0s</span>
+                        </span>
+                    </div>
+                    </div>
+                    <!-- start btn -->
+                    <div class="selection-footer">
+                        <button class="start" type="submit">Start Round</button>
+                    </div>
+                
+            </form>
+        </div>
+        <!-- countdown page -->
+        <div class="card" id="countdown-page">
+            <h1 class="countdown">3</h1>
+        </div>
+
+        <!-- game page -->
+        <div class="card" id="game-page">
+            <div class="item-container">
+                <div class="selected-item"></div>
+                <div class="item">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Script -->
+    <script src="main.js"></script>
+</body>
+
+</html>
