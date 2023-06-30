@@ -29,6 +29,12 @@ let secondNumber = 0
 let equationObject = {}
 let wrongFormat = []
 
+
+// Display game page
+function displayGamePage(){
+    gamePage.hidden = false
+    countdownPage.hidden = true
+}
 // get math random upto max
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -65,6 +71,22 @@ function createEquations() {
     }
     shuffle(equationsArray)
     console.log('equationArray:', equationsArray)
+    addEquationToDom()
+}
+
+// add equation to Dom
+function addEquationToDom(){
+    equationsArray.forEach((equation)=>{
+        // create a div for the equation
+        const itemArr = document.createElement('div')
+        itemArr.classList.add('item')
+        // equation text
+        const textH1 = document.createElement('h1')
+        textH1.textContent = equation.value
+        // append
+        itemArr.appendChild(textH1)
+        itemContainer.appendChild(itemArr)
+    })
 }
 
 // populate countdown start
@@ -87,6 +109,7 @@ function showCountDown(){
     splashPage.hidden = true 
     countDownStart()
     createEquations()
+    setTimeout(displayGamePage(), 400)
 }
 
 
