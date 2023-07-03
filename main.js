@@ -20,8 +20,8 @@ const playAgainBtn = document.querySelector(".play-again");
 
 // equation
 let questionAmount = 0
-
 let equationsArray = []
+let playerGuessArray = []
 
 // gamePage
 let firstNumber = 0
@@ -84,6 +84,7 @@ function addEquationToDom(){
         // append
         itemArr.appendChild(textH1)
         itemContainer.appendChild(itemArr)
+        
     })
 }
 // Dynamically adding correct/incorrect equations
@@ -132,6 +133,20 @@ function showCountDown(){
     setTimeout(displayGamePage, 2000)
 }
 
+// scroll
+let valueY = 0
+
+// scroll store selection in playguessarray
+
+function select(guessedTrue){
+    console.log(guessedTrue);
+    // scroll pixel
+    valueY  += 80
+    itemContainer.scroll(0, valueY)
+    // add player guess if true or false
+
+    return guessedTrue ? playerGuessArray.push('true') : playerGuessArray.push('false')
+}
 
 // get value from selected radio button
 function getRadioValue(){
