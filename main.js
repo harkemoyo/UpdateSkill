@@ -29,7 +29,13 @@ let secondNumber = 0
 let equationObject = {}
 let wrongFormat = []
 
-
+// Time
+let timer;
+let timePlayed = 0;
+let baseTime = 0;
+let penaltyTime = 0;
+let finalTime = 0;
+let finalTimeDisplay = "0.0";
 // Display game page
 function displayGamePage(){
     gamePage.hidden = false
@@ -138,15 +144,15 @@ let valueY = 0
 
 // scroll store selection in playguessarray
 
-function select(guessedTrue){
-    console.log(guessedTrue);
-    // scroll pixel
-    valueY  += 80
-    itemContainer.scroll(0, valueY)
-    // add player guess if true or false
-
-    return guessedTrue ? playerGuessArray.push('true') : playerGuessArray.push('false')
-}
+function select(guessTrue) {
+    //scroll 80px
+    valueY += 80;
+    itemContainer.scroll(0, valueY);
+    //Add player Guess to array
+    return guessTrue
+      ? playerGuessArray.push("true")
+      : playerGuessArray.push("false");
+  }
 
 // get value from selected radio button
 function getRadioValue(){
