@@ -141,6 +141,17 @@ function showCountDown(){
 
 // scroll
 let valueY = 0
+function addTime(){
+    timePlayed += 0.1
+}
+// start timer when game page is clicked
+function startTimer(){
+    // reset time
+    timePlayed = 0;
+    penaltyTime = 0;
+    finalTime = 0;
+    timer = setInterval(addTime, 100)
+}
 
 // scroll store selection in playguessarray
 
@@ -198,3 +209,4 @@ startForm.addEventListener('click', () =>{
 // Event Listeners
 
 startForm.addEventListener('submit', selectQuestionAmount)
+gamePage.addEventListener('click', startTimer)
